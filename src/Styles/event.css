@@ -1,0 +1,53 @@
+.Event-collection{
+    width: 80%;
+    display: block;
+    justify-content: center;
+    margin-left: 2rem;
+}
+.title{
+    text-transform: capitalize;
+    font-size: 45px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: green;
+}
+.list-event{
+    display: grid;
+    grid-template-columns: 15% 60% 20%;
+    background: rgb(204, 197, 197);
+    padding: 1rem 0;
+}
+.image img{
+    width: 150px;
+    height: 100px;
+    border-radius: 10%;
+}
+.image{
+    padding-left: 2rem;
+    align-self: center;
+}
+.details .name{
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: rgb(3, 66, 45);
+    line-height: 2px;
+   
+}
+.location{
+    color: rgb(194, 75, 75);
+    margin-right: 2rem;
+    padding: 4px;
+    text-transform: capitalize;
+}
+.date{
+    color: rgb(196, 87, 87);
+    
+}
+.icons{
+    display: flex;
+    justify-content: end;
+    gap: 0.6rem;
+    align-self: center;
+    color: green;
+}
