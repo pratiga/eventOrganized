@@ -4,7 +4,7 @@ import '../Styles/event.css'
 import StarIcon from '@mui/icons-material/Star';
 import WatchLaterIcon from '@mui/icons-material/WatchLater';
 import AutorenewIcon from '@mui/icons-material/Autorenew';
-
+import { Link } from "react-router-dom";
 const Event = () => {
   const [event, setEvent] = useState([]);
   // var count = 0;
@@ -28,9 +28,11 @@ const Event = () => {
           return (
             <>
               <div className="list-event">
+              <Link to={`/eventDetail/${value.id}`}>
                 <div className="image">
                   <img src={value.image_url} alt="images" />
                 </div>
+                </Link>
                 <div className="details">
                   <span className="name">{value.name}</span><br/>
                   <span className="location">{value.location}</span><br/>
