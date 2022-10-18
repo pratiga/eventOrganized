@@ -1,7 +1,7 @@
 .header{
     display: grid;
     grid-template-columns: 20% 60% 20%;
-    background:gray;
+    background:rgb(128, 128, 128);
     color: white;
     width: 100%;
     padding: 1rem;
@@ -27,7 +27,7 @@
 .add{
     padding: 1rem 1.8rem ;
     text-transform: uppercase;
-    background-color: rgb(3, 71, 13);
+    background-color: rgb(28, 55, 96);
     color: aliceblue;
     border: none;
 }
