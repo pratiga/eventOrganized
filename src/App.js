@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Event from "./components/Event";
 import EventForm from "./pages/eventForm";
+import EventDetail from "./components/eventDetail";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/event" element={<Event />} />
         <Route path="/form" element={<EventForm />} />
+        <Route path="/eventDetail/:id" element={<EventDetail />}></Route>
       </Routes>
     </BrowserRouter>
   );
