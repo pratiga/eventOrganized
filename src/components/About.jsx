@@ -30,6 +30,29 @@ our dcale give us wide-ranging specialist and local knowledge and we take pride 
 </div>
 </div>
 </div>
+  
+    <div class="rental-detail">
+    <div class="title">
+        <h1>Organizations Details </h1>
+    </div>
+    <div class="rows">
+        <div class="containers">
+            <h1>Company history</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non ea exercitationem omnis ex mollitia eum officia voluptatibus labore qui quod, officiis iste obcaecati. Illum cupiditate nisi, eaque voluptatum excepturi molestias!</p>
+            <button>Our history</button>
+        </div>
+        <div class="containers">
+        <h1>Ethics</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente cum enim et deleniti soluta asperiores odio officia non, velit ex similique omnis temporibus numquam qui architecto saepe ipsam ad ab.</p>
+       <button>how we work</button> 
+        </div>
+        <div class="containers">
+        <h1>Management</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A magnam ea consectetur perferendis corrupti aut delectus debitis. Nihil modi harum voluptatum enim cupiditate quidem, quas veritatis sit illo incidunt facere?</p>
+       <button>our nepal board</button> 
+        </div>
+    </div>
+    </div>
     </div>
   )
 }
