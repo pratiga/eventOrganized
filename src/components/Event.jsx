@@ -4,40 +4,76 @@ import "../Styles/event.css";
 import StarIcon from "@mui/icons-material/Star";
 import WatchLaterIcon from "@mui/icons-material/WatchLater";
 import AutorenewIcon from "@mui/icons-material/Autorenew";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
+import AddIcon from "@mui/icons-material/Add";
 import { Link } from "react-router-dom";
 const Event = () => {
   const [event, setEvent] = useState([]);
+  const [edit, setEdit] = useState();
   // var count = 0;
+  const url = "https://sponsored-by.herokuapp.com/events";
   useEffect(() => {
-    axios
-      .get("https://sponsored-by.herokuapp.com/events")
-      .then((res) => {
-        // console.log(count++);
-        console.log(res.data);
-        setEvent(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    getEvent();
   }, []);
+
+  function getEvent() {
+    axios
+      .get(url)
+      .then((response) => {
+        setEvent(response.data);
+      })
+      .catch((err) => console.log(err));
+  }
+
+  function eventDelete(id, e) {
+    if (e && e.preventDefault) {
+      e.preventDefault();
+    }
+    axios
+      .delete(`https://sponsored-by.herokuapp.com/event/${id}`)
+      .then((res) => {
+        console.log("Deleted!!!");
+        getEvent();
+      })
+      .catch((err) => console.log(err));
+  }
+  function eventEdit(item) {
+    setEdit({ ...item });
+  }
   return (
     <div className="col-large-12">
       <div className="col-large-9">
-      
         {event.map((value) => {
           return (
-            <Link to={`/eventDetail/${value.id}`}>
-              <div className="containers">
+            <div className="containers" key={value.id}>
+              <Link to={`/eventDetail/${value.id}`}>
                 <div className="image-event">
                   <img src={value.image_url} alt="images" />
                 </div>
-                <div className="row-1">
-                  <h2 className="name-event">{value.name}</h2>
-                  <p className="short-desc">{value.short_description}</p>
-                </div>
-                <div className="row-2"></div>
+              </Link>
+              <div className="row-1">
+                <h2 className="name-event">{value.name}</h2>
+                <p className="short-desc">{value.short_description}</p>
               </div>
-            </Link>
+              <div className="row-2">
+                <div className="admin-view">
+                  <div className="edit">
+                    <Link to="/form">
+                      <AddIcon />
+                    </Link>
+                  </div>
+                  <div className="edit">
+                    <Link to={`/editForm/${value.id}`}>
+                      <EditIcon />
+                    </Link>
+                  </div>
+                  <div className="delete" onClick={() => eventDelete(value.id)}>
+                    <DeleteIcon />
+                  </div>
+                </div>
+              </div>
+            </div>
           );
         })}
       </div>
