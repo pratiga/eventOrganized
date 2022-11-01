@@ -8,10 +8,9 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import AddIcon from "@mui/icons-material/Add";
 import { Link } from "react-router-dom";
+
 const Event = () => {
   const [event, setEvent] = useState([]);
-  const [edit, setEdit] = useState();
-  // var count = 0;
   const url = "https://sponsored-by.herokuapp.com/events";
   useEffect(() => {
     getEvent();
@@ -33,13 +32,9 @@ const Event = () => {
     axios
       .delete(`https://sponsored-by.herokuapp.com/event/${id}`)
       .then((res) => {
-        console.log("Deleted!!!");
         getEvent();
       })
       .catch((err) => console.log(err));
-  }
-  function eventEdit(item) {
-    setEdit({ ...item });
   }
   return (
     <div className="col-large-12">

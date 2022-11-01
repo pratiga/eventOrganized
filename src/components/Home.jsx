@@ -24,7 +24,7 @@ const Home = () => {
       });
   }, []);
 
-  const slider = React.useRef(null);
+const slider = React.useRef(null);
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -129,7 +129,6 @@ const Home = () => {
         </div>
 
         <div className="event">
-          
           <Slider ref={slider} {...settings}>
             {event.map((value) => {
               return (
@@ -169,7 +168,7 @@ const Home = () => {
               Prev
             </button>
             <button
-            className=" btns next-button"
+              className=" btns next-button"
               style={{ marginLeft: 20 }}
               onClick={() => slider?.current?.slickNext()}
             >

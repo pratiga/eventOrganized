@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useHistory, useParams } from "react-router-dom";
-import Axios from "axios";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 
 const EditEventForm = () => {
@@ -10,22 +9,24 @@ const EditEventForm = () => {
   const [description, setDescription] = useState("");
   const [date, setDate] = useState("");
   const [img_url, setImg_url] = useState("");
-  // const [short_description, setShort_description] = useState("");
-  // const [organized_by, setOrganized_by] = useState("");
+  const [short_description, setShort_description] = useState("");
+  const [organized_by, setOrganized_by] = useState("");
   const { id } = useParams();
   const url = `https://sponsored-by.herokuapp.com/event/${id}`;
 
   useEffect(() => {
     getUsers();
   }, []);
+
   function getUsers() {
     fetch(url).then((result) => {
       result.json().then((resp) => {
-        console.warn(resp);
         setEdit(resp);
         setName(resp.name);
         setLocation(resp.location);
         setDescription(resp.description);
+        setShort_description(resp.short_description);
+        setOrganized_by(resp.organized_by);
         setImg_url(resp.image_url);
       });
     });
@@ -33,33 +34,32 @@ const EditEventForm = () => {
   const handleEdit = (e) => {
     e.preventDefault();
     axios
-      .put( `https://sponsored-by.herokuapp.com/event/${id}`, {
+      .put(`https://sponsored-by.herokuapp.com/event/${id}`, {
         name: name,
         description: description,
         location: location,
         date: date,
         image_url: img_url,
-        // short_description: short_description,
-        // organized_by: organized_by,
+        short_description: short_description,
+        organized_by: organized_by,
         category: "string",
-        short_description: "string",
-        organized_by: "string",
         sponsors: [],
       })
       .then((res) => {
         console.log(res.data);
         setEdit({ updatedAt: res.data.updatedAt });
-        alert("sucessfuly submited")
+        alert("sucessfuly submited");
         setName("");
         setLocation("");
         setDescription("");
+        setOrganized_by("");
+        setShort_description("");
         setDate("");
         setImg_url("");
       })
       .catch((error) => {
         console.log(error.response);
       });
-      
   };
   return (
     <div className="App">
@@ -78,6 +78,15 @@ const EditEventForm = () => {
             size="15"
             required
           />
+          <label> short_Descreption </label>
+          <input
+            type="text"
+            value={short_description}
+            placeholder="Short Description"
+            onChange={(e) => setShort_description(e.target.value)}
+            size="15"
+            required
+          />
           <label>
             <b>location</b>
           </label>
@@ -86,6 +95,16 @@ const EditEventForm = () => {
             placeholder="Enter location"
             onChange={(e) => setLocation(e.target.value)}
             value={location}
+            required
+          />
+          <label for="">
+            <b>organizer</b>
+          </label>
+          <input
+            type="text"
+            placeholder="Enter organizer"
+            onChange={(e) => setOrganized_by(e.target.value)}
+            value={organized_by}
             required
           />
           <label>
@@ -106,7 +125,7 @@ const EditEventForm = () => {
             size="10"
             required
           />
-            {/* <label> short_Descreption </label>
+          <label> short_Descreption </label>
           <input
             type="text"
             value={short_description}
@@ -114,8 +133,8 @@ const EditEventForm = () => {
             onChange={(e) => setShort_description(e.target.value)}
             size="15"
             required
-          /> */}
-          {/* <label for="">
+          />
+          <label for="">
             <b>organizer</b>
           </label>
           <input
@@ -124,7 +143,7 @@ const EditEventForm = () => {
             onChange={(e) => setOrganized_by(e.target.value)}
             value={organized_by}
             required
-          /> */}
+          />
           Description :
           <textarea
             cols="80"
