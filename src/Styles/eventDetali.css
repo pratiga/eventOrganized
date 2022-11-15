@@ -1,0 +1,14 @@
+.eventDetail {
+  width: 80%;
+  padding: 1rem;
+}
+
+.image-event img {
+  width: 550px;
+  height: 500px;
+}
+
+.admin-view {
+  display: flex;
+  gap: 2rem;
+}

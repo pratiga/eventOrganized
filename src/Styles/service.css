@@ -1,0 +1,43 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.service{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.service-box:hover{
+    transform: rotateX(-90deg);
+}
+.service-box{
+    width: 350px;
+    height: 350px;
+    transform-style:preserve-3d;
+    transition: transform 0.5s;
+}
+.box-front,
+.box-back{
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: rgb(6, 10, 36);
+    color: aliceblue;
+    padding: 1rem;
+}
+.box-front p{
+    width: 80%;
+    text-align: center;
+    margin-top: 2rem;
+    color: rgb(228, 212, 130);
+}
+.box-back p{
+    width: 80%;
+    color: rgb(228, 212, 130);
+}
+.box-back{
+    transform: rotateX(90deg);
+}
