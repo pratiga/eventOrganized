@@ -6,10 +6,11 @@ import EditIcon from "@mui/icons-material/Edit";
 import "../Styles/eventDetali.css";
 import "../Styles/slider.scss";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const eventDetail = () => {
-  let content= null
+  const nav = useNavigate();
+  let content = null;
   const { id } = useParams();
   const url = `https://sponsored-by.herokuapp.com/event/${id}`;
   const [event, setEvent] = useState(null);
@@ -20,22 +21,16 @@ const eventDetail = () => {
     });
   }, [url]);
 
-  function getEvent() {
-    axios.get("https://sponsored-by.herokuapp.com/events").then((response) => {
-      setEvent(response.data);
-    })
-    .catch((err) => console.log(err));
-  }
-
   function eventDelete(id, e) {
     if (e && e.preventDefault) {
       e.preventDefault();
     }
-    axios.delete(url).then((res) => {
-        getEvent();
+    axios
+      .delete(url)
+      .then((res) => {
+        nav("/event");
       })
       .catch((err) => console.log(err));
-       getEvent();
   }
 
   if (event) {
@@ -62,11 +57,7 @@ const eventDetail = () => {
     );
   }
 
-  return (
-    <>
-      <div>{content}</div>
-    </>
-  );
+  return <div>{content}</div>;
 };
 
 export default eventDetail;
