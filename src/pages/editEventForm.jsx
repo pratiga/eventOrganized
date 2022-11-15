@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const EditEventForm = () => {
+  const nav = useNavigate();
   const [edit, setEdit] = useState([]);
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
@@ -56,6 +57,7 @@ const EditEventForm = () => {
         setShort_description("");
         setDate("");
         setImg_url("");
+        nav("/event");
       })
       .catch((error) => {
         console.log(error.response);
@@ -69,7 +71,9 @@ const EditEventForm = () => {
             <h1> Event Registeration Form</h1>
           </center>
           <hr />
-          <label> Name </label>
+          <label>
+            <b> Name</b>{" "}
+          </label>
           <input
             type="text"
             value={name}
@@ -78,15 +82,8 @@ const EditEventForm = () => {
             size="15"
             required
           />
-          <label> short_Descreption </label>
-          <input
-            type="text"
-            value={short_description}
-            placeholder="Short Description"
-            onChange={(e) => setShort_description(e.target.value)}
-            size="15"
-            required
-          />
+          <br />
+
           <label>
             <b>location</b>
           </label>
@@ -97,6 +94,7 @@ const EditEventForm = () => {
             value={location}
             required
           />
+          <br />
           <label for="">
             <b>organizer</b>
           </label>
@@ -107,6 +105,7 @@ const EditEventForm = () => {
             value={organized_by}
             required
           />
+          <br />
           <label>
             <b>image_url</b>
           </label>
@@ -117,6 +116,7 @@ const EditEventForm = () => {
             value={img_url}
             required
           />
+          <br />
           <input
             type="date"
             value={date}
@@ -125,7 +125,10 @@ const EditEventForm = () => {
             size="10"
             required
           />
-          <label> short_Descreption </label>
+          <br />
+          <label>
+            <b>short_Descreption</b>{" "}
+          </label>
           <input
             type="text"
             value={short_description}
@@ -134,6 +137,7 @@ const EditEventForm = () => {
             size="15"
             required
           />
+          <br />
           <label for="">
             <b>organizer</b>
           </label>
@@ -144,7 +148,10 @@ const EditEventForm = () => {
             value={organized_by}
             required
           />
-          Description :
+          <br />
+          <label>
+            <b> Description :</b>
+          </label>
           <textarea
             cols="80"
             rows="5"
