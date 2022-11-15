@@ -1,9 +1,11 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import "../Styles/eventForm.css";
-import { useState } from "react";
+import { useState, useReducer } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function eventForm() {
+  const nav = useNavigate();
   const [events, setEvents] = useState([]);
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
@@ -36,6 +38,7 @@ function eventForm() {
         setShort_description("");
         setImg_url("");
         setOrganized_by("");
+        nav("/");
       })
       .catch((err) => {
         console.log(err.message);
@@ -50,7 +53,9 @@ function eventForm() {
             <h1> Event Registeration Form</h1>
           </center>
           <hr />
-          <label> Name </label>
+          <label>
+            <b> Name:</b>{" "}
+          </label>
           <input
             type="text"
             value={name}
@@ -59,17 +64,9 @@ function eventForm() {
             size="15"
             required
           />
-          <label> short_Descreption </label>
-          <input
-            type="text"
-            value={short_description}
-            placeholder="Short Description"
-            onChange={(e) => setShort_description(e.target.value)}
-            size="15"
-            required
-          />
+          <br />
           <label for="location">
-            <b>location</b>
+            <b>location:</b>
           </label>
           <input
             type="text"
@@ -78,8 +75,9 @@ function eventForm() {
             value={location}
             required
           />
+          <br />
           <label for="">
-            <b>organizer</b>
+            <b>organizer:</b>
           </label>
           <input
             type="text"
@@ -88,8 +86,9 @@ function eventForm() {
             value={organized_by}
             required
           />
+          <br />
           <label for="">
-            <b>image_url</b>
+            <b>image_url:</b>
           </label>
           <input
             type="text"
@@ -98,6 +97,21 @@ function eventForm() {
             value={img_url}
             required
           />
+          <br />
+          <label>
+            {" "}
+            <b>short_Descreption: </b>
+          </label>
+          <input
+            type="text"
+            value={short_description}
+            placeholder="Short Description"
+            onChange={(e) => setShort_description(e.target.value)}
+            size="15"
+            required
+          />
+          <br />
+          <label>Date :</label>
           <input
             type="date"
             value={date}
@@ -106,7 +120,9 @@ function eventForm() {
             size="10"
             required
           />
-          Description :
+          <br />
+          <br />
+
           <textarea
             cols="80"
             rows="5"
@@ -115,6 +131,7 @@ function eventForm() {
             value={description}
             required
           ></textarea>
+          <br />
           <button type="submit" class="registerbtn">
             Submit
           </button>
