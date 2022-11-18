@@ -24,19 +24,21 @@ const header = () => {
             <Link to="/service">service</Link>
           </li>
           <li>
-            <Link to="/event">Event</Link>
+            <Link to="/event">Events</Link>
           </li>
           <li>
-            <Link to="/sponcer">sponcer</Link>
+            <Link to="/sponcer">sponsors</Link>
           </li>
         </ul>
       </div>
       <div className="right-head">
         <div className="list button">
           <button className="add events">
-            <Link to="/form">Add Event</Link>
+            <Link to="/eventForm">Add Event</Link>
           </button>
-          <button className="add sponcer"> Add Sponcer </button>
+          <button className="add sponcer">
+            <Link to="/sponserForm">Add Sponsor </Link>
+           </button>
         </div>
       </div>
     </div>
