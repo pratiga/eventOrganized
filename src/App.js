@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Event from "./components/Event";
 import EventForm from "./pages/eventForm";
+import SponserForm from "./pages/sponserForm";
 import EventDetail from "./components/eventDetail";
 import EditEventForm from "./pages/editEventForm";
 import Service from "./components/service";
@@ -20,7 +21,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/service" element={<Service />} />
         <Route path="/event" element={<Event />} />
-        <Route path="/form" element={<EventForm />} />
+        <Route path="/eventForm" element={<EventForm />} />
+        <Route path="/sponserForm" element={<SponserForm/>} />
         <Route path ="/editForm/:id" element={<EditEventForm/>} />
         <Route path="/eventDetail/:id" element={<EventDetail />}></Route>
         <Route path="/eventDetail/:id" element={ <Navigate to="/event" /> } />
