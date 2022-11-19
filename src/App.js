@@ -8,6 +8,7 @@ import EventForm from "./pages/eventForm";
 import SponserForm from "./pages/sponserForm";
 import EventDetail from "./components/eventDetail";
 import EditEventForm from "./pages/editEventForm";
+import Sponsors from "./components/sponsors";
 import Service from "./components/service";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/service" element={<Service />} />
         <Route path="/event" element={<Event />} />
+        <Route path="/sponsors" element={<Sponsors />} />
         <Route path="/eventForm" element={<EventForm />} />
         <Route path="/sponserForm" element={<SponserForm/>} />
         <Route path ="/editForm/:id" element={<EditEventForm/>} />
