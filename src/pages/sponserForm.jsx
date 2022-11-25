@@ -54,8 +54,8 @@ const sponserForm = () => {
       </div>
       <form onSubmit={handleSubmit}>
         <div className="form-body">
-          <div className="name">
-            <label>
+          <div className="names">
+            <label className="titles">
               <b>Name:</b>
             </label>
             <input
@@ -66,18 +66,19 @@ const sponserForm = () => {
               required
             />
           </div>
-          <div className="images">
-            <label>
+          <div className="sponsor-images">
+            <label className="titles">
               <b>Image_url :</b>
             </label>
             <input
               type="text"
+              placeholder="image-url"
               onChange={(e) => setImg_url(e.target.value)}
               value={img_url}
             />
           </div>
           <div className="short-description">
-            <label>
+            <label className="titles">
               <b>Short-Description:</b>
             </label>
             <input
@@ -89,7 +90,7 @@ const sponserForm = () => {
           </div>
 
           <div className="location">
-            <label>
+            <label className="titles">
               <b>Location:</b>
             </label>
             <input
@@ -100,7 +101,7 @@ const sponserForm = () => {
             />
           </div>
           <div className="website">
-            <label>
+            <label className="titles">
               <b>Website-url:</b>
             </label>
             <input
@@ -111,7 +112,7 @@ const sponserForm = () => {
             />
           </div>
           <div className="facebook">
-            <label>
+            <label className="titles">
               <b>facebook-url:</b>
             </label>
             <input
@@ -122,7 +123,7 @@ const sponserForm = () => {
             />
           </div>
           <div className="twitter">
-            <label>
+            <label className="titles">
               <b>Twitter-url:</b>
             </label>
             <input
@@ -133,7 +134,7 @@ const sponserForm = () => {
             />
           </div>
           <div className="instagram">
-            <label>
+            <label className="titles">
               <b>Instagram-url:</b>
             </label>
             <input
@@ -144,7 +145,7 @@ const sponserForm = () => {
             />
           </div>
           <div className="message">
-            <label>
+            <label className="titles">
               <b>Add Description:</b>
             </label>
             <textarea
