@@ -2,8 +2,10 @@
 import axios from "axios";
 import React, { useState } from "react";
 import "../Styles/sponserForm.css";
+import { useNavigate } from "react-router-dom";
 
 const sponserForm = () => {
+  const nav = useNavigate();
   const [sponser, setSponser] = useState([]);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -41,6 +43,7 @@ const sponserForm = () => {
         setDescription("");
         setLocation("");
         setImg_url("");
+        nav("/sponsors");
       })
       .catch((err) => {
         console.log(err.message);
@@ -54,7 +57,7 @@ const sponserForm = () => {
       </div>
       <form onSubmit={handleSubmit}>
         <div className="form-body">
-          <div className="names">
+          <div className="names rows">
             <label className="titles">
               <b>Name:</b>
             </label>
@@ -66,7 +69,7 @@ const sponserForm = () => {
               required
             />
           </div>
-          <div className="sponsor-images">
+          <div className="sponsor-images rows">
             <label className="titles">
               <b>Image_url :</b>
             </label>
@@ -77,7 +80,7 @@ const sponserForm = () => {
               value={img_url}
             />
           </div>
-          <div className="short-description">
+          <div className="short-description rows">
             <label className="titles">
               <b>Short-Description:</b>
             </label>
@@ -89,7 +92,7 @@ const sponserForm = () => {
             />
           </div>
 
-          <div className="location">
+          <div className="location rows">
             <label className="titles">
               <b>Location:</b>
             </label>
@@ -100,7 +103,7 @@ const sponserForm = () => {
               value={location}
             />
           </div>
-          <div className="website">
+          <div className="website rows">
             <label className="titles">
               <b>Website-url:</b>
             </label>
@@ -111,7 +114,7 @@ const sponserForm = () => {
               value={website}
             />
           </div>
-          <div className="facebook">
+          <div className="facebook rows">
             <label className="titles">
               <b>facebook-url:</b>
             </label>
@@ -122,7 +125,7 @@ const sponserForm = () => {
               value={facebook}
             />
           </div>
-          <div className="twitter">
+          <div className="twitter rows">
             <label className="titles">
               <b>Twitter-url:</b>
             </label>
@@ -133,7 +136,7 @@ const sponserForm = () => {
               value={twitter}
             />
           </div>
-          <div className="instagram">
+          <div className="instagram rows">
             <label className="titles">
               <b>Instagram-url:</b>
             </label>
@@ -144,10 +147,7 @@ const sponserForm = () => {
               value={instagram}
             />
           </div>
-          <div className="message">
-            <label className="titles">
-              <b>Add Description:</b>
-            </label>
+          <div className="message rows">
             <textarea
               cols="80"
               rows="6"
@@ -156,7 +156,7 @@ const sponserForm = () => {
               value={description}
             />
           </div>
-          <div className="form-submit">
+          <div className="form-submit ">
             <button>SUBMITS</button>
           </div>
         </div>
