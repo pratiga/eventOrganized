@@ -1,61 +1,74 @@
-.Sponser{
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    margin: 1em 2em;
-    text-align: center;
-  }
-  .form-title {
-    font-size: 50px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-align: center;
-    width: 80%;
-    margin-top: 3rem;
-    color: rgb(15, 15, 41);
-  }
-  .form-body {
-    display: block;
-    border-top: 1px solid rgba(0, 0, 0, 0.6);
-    padding: 2rem;
-    width: 90%;
-    margin-left: 2rem;
-  }
-  .titles{
-    width:40%;
-  }
-  input,
-  textarea {
-   width: 60%;
-   height: 3rem;
-   text-align: center;
-    background-color: rgba(169, 171, 169, 0.1);
-    border: none;
-  }
-  textarea{
-    height: 10rem;
-  }
-  
-  .form-submit {
-    text-align: center;
-    padding: 2rem;
-  }
-  button {
-    width: 50%;
-    height: 4rem;
-    background-color: gray;
-    color: white;
-    font-size: 20px;
-    letter-spacing: 1px;
-    border: none;
-    box-shadow: 0 0 5px white;
-    border-radius: 10px;
-  }
-  button:hover {
-    cursor: pointer;
-    background: yellowgreen;
-    color: rebeccapurple;
-  }
-  @media screen and (min-width: 80rem) {
-    
-  }
-  
+.Sponser {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.form-title {
+  font-size: 50px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-align: center;
+  width: 80%;
+  margin-top: 3rem;
+  color: rgb(15, 15, 41);
+}
+
+.form-body {
+  display: block;
+  border-top: 1px solid rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  width: 90%;
+  margin-left: 2rem;
+}
+
+.titles {
+  width: 40%;
+  font-size: 1.3rem;
+  text-transform: capitalize;
+}
+
+.rows {
+  display: block;
+  margin-bottom: 1.2rem;
+}
+
+input,
+textarea {
+  width: 60%;
+  height: 3rem;
+  text-align: center;
+  background-color: rgba(169, 171, 169, 0.1);
+  border: none;
+  text-transform: capitalize;
+  box-shadow: 2px 3px 5px rgb(134, 128, 128);
+}
+
+textarea {
+  height: 10rem;
+}
+
+.form-submit {
+  text-align: center;
+  padding: 2rem;
+}
+
+button {
+  width: 50%;
+  height: 4rem;
+  background-color: gray;
+  color: white;
+  font-size: 20px;
+  letter-spacing: 1px;
+  border: none;
+  box-shadow: 0 0 5px white;
+  border-radius: 10px;
+}
+
+button:hover {
+  cursor: pointer;
+  background: yellowgreen;
+  color: rebeccapurple;
+}
+
+@media screen and (min-width: 80rem) {}
