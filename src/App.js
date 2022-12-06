@@ -1,6 +1,6 @@
-import Headers from "./pages/header";
+import Headers from "./header/Navbar";
 import "./App.css";
-import { BrowserRouter, Route, Routes,Navigate } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import About from "./components/About";
 import Event from "./components/Event";
@@ -9,6 +9,7 @@ import SponserForm from "./pages/sponserForm";
 import EventDetail from "./components/eventDetail";
 import EditEventForm from "./pages/editEventForm";
 import Sponsors from "./components/sponsors";
+import SponsorDetail from "./components/sponsorDetail";
 import Service from "./components/service";
 
 function App() {
@@ -24,10 +25,10 @@ function App() {
         <Route path="/event" element={<Event />} />
         <Route path="/sponsors" element={<Sponsors />} />
         <Route path="/eventForm" element={<EventForm />} />
-        <Route path="/sponserForm" element={<SponserForm/>} />
-        <Route path ="/editForm/:id" element={<EditEventForm/>} />
+        <Route path="/sponserForm" element={<SponserForm />} />
+        <Route path="/editForm/:id" element={<EditEventForm />} />
         <Route path="/eventDetail/:id" element={<EventDetail />}></Route>
-        <Route path="/eventDetail/:id" element={ <Navigate to="/event" /> } />
+        <Route path="/sponsorDetail/:id" element={<SponsorDetail />}></Route>
       </Routes>
     </BrowserRouter>
   );
